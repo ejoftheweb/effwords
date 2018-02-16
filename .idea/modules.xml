@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/effwords.iml" filepath="$PROJECT_DIR$/.idea/modules/effwords.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/effwords_main.iml" filepath="$PROJECT_DIR$/.idea/modules/effwords_main.iml" group="effwords" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/effwords_test.iml" filepath="$PROJECT_DIR$/.idea/modules/effwords_test.iml" group="effwords" />
+    </modules>
+  </component>
+</project>
