@@ -19,26 +19,32 @@ public class Effwords {
 
 
     public static String getWord(int wordlist, int index) throws EffwordException {
+        List<String> words=null;
         try {
-           List<String> words;
 
-            switch (wordlist){
+
+            switch (wordlist) {
                 case EFF_SHORTLIST:
-                    words=EffwordLists.getShortWordList();
+                    words = EffwordLists.getShortWordList();
                     break;
                 case EFF_LONGLIST:
-                    words= EffwordLists.getLongWordList();
+                    words = EffwordLists.getLongWordList();
                     break;
                 case EFF_DEFAULTLIST:
-                    words= EffwordLists.getDefWordList();
+                    words = EffwordLists.getDefWordList();
                     break;
                 default:
-                    words= EffwordLists.getDefWordList();
+                    words = EffwordLists.getDefWordList();
                     break;
 
             }
-            return words.get(index % words.size());
+            while ((index >= words.size()) && (index < 0)) {
+                index = (index % words.size());
+            }
+            return words.get(index);
 
+        }catch(ArrayIndexOutOfBoundsException aiobx){
+            throw new EffwordException("index out of bounds: list has "+words.size()+", index is "+index, aiobx);
         }catch (Exception x){
             throw new EffwordException("problem getting word", x);
         }
