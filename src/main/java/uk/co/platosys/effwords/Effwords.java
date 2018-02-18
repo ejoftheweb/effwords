@@ -20,6 +20,9 @@ public class Effwords {
 
     public static String getWord(int wordlist, int index) throws EffwordException {
         List<String> words=null;
+        if (index<0){
+            index = (0-index);
+        }
         try {
 
 
@@ -38,7 +41,7 @@ public class Effwords {
                     break;
 
             }
-            while ((index >= words.size()) && (index < 0)) {
+            while (index >= words.size()) {
                 index = (index % words.size());
             }
             return words.get(index);
